@@ -1,6 +1,6 @@
 # name of the topic
 output "name" {
-  value = "${var.name}"
+  value = "${azurerm_template_deployment.topic.outputs["topicName"]}"
 }
 
 # primary connection string for send and listen operations

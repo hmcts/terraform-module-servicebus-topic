@@ -54,6 +54,10 @@
     }
   ],
   "outputs": {
+    "topicName": {
+      "type": "string",
+      "value": "[parameters('serviceBusTopicName')]"
+    },
     "primarySendAndListenConnectionString": {
       "type": "string",
       "value": "[listkeys(variables('sendAndListenAuthRuleResourceId'), variables('sbVersion')).primaryConnectionString]"
