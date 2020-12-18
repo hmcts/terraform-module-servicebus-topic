@@ -7,15 +7,15 @@ resource "azurerm_servicebus_topic" "servicebus_topic" {
   resource_group_name = var.resource_group_name
   namespace_name      = var.namespace_name
 
-  enable_partitioning                     = var.enable_partitioning
-  default_message_ttl                     = var.default_message_ttl
-  max_size_in_megabytes                   = var.max_size_in_megabytes
-  requires_duplicate_detection            = var.requires_duplicate_detection
-  duplicate_detection_history_time_window = var.duplicate_detection_history_time_window
-  enable_batched_operations               = var.enable_batched_operations
-  support_ordering                        = var.support_ordering
-  auto_delete_on_idle                     = var.auto_delete_on_idle
-  enable_express                          = var.enable_express
+  enable_partitioning                     = false
+  default_message_ttl                     = "P10675199DT2H48M5.4775807S"
+  max_size_in_megabytes                   = 1024
+  requires_duplicate_detection            = false
+  duplicate_detection_history_time_window = "PT10M"
+  enable_batched_operations               = false
+  support_ordering                        = false
+  auto_delete_on_idle                     = "P10675199DT2H48M5.4775807S"
+  enable_express                          = false
 }
 
 resource "azurerm_servicebus_topic_authorization_rule" "topic_authorization_rule" {

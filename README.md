@@ -28,18 +28,6 @@ The following parameters are required by this module
 - `resource_group_name` the name of the resource group in which to create the ServiceBus namespace.
 - `namespace_name` the name of the service bus namespace in which the topic must be created.
 
-The following parameters are optional
-
-- `enable_partitioning` whether to enable the topic to be partitioned across multiple message brokers (true or false).
-- `default_message_ttl` the ISO 8601 timespan duration of TTL of messages sent to this topic if no TTL value is set on the message itself.
-- `max_size_in_megabytes` controls the size of memory allocated for the topic.
-- `requires_duplicate_detection` whether the Topic requires duplicate detection (true or false).
-- `duplicate_detection_history_time_window` The ISO 8601 timespan duration during which duplicates can be detected.
-- `enable_batched_operations` whether server-side batched operations are enabled (true or false).
-- `support_ordering` whether the Topic supports ordering (true or false).
-- `auto_delete_on_idle` The ISO 8601 timespan duration of the idle interval after which the Topic is automatically deleted.
-- `enable_express` whether Express Entities are enabled (true or false).
-
 ### Output
 
 The following variables are provided by the module for use in other modules
