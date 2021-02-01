@@ -8,13 +8,13 @@ resource "azurerm_servicebus_topic" "servicebus_topic" {
   namespace_name      = var.namespace_name
 
   enable_partitioning                     = false
-  default_message_ttl                     = "P1D"
+  default_message_ttl                     = "P10675199DT2H48M5.4775807S"
   max_size_in_megabytes                   = 1024
   requires_duplicate_detection            = false
   duplicate_detection_history_time_window = "PT10M"
-  enable_batched_operations               = true
+  enable_batched_operations               = false
   support_ordering                        = false
-  auto_delete_on_idle                     = "P10675199DT2H48M5.477S"
+  auto_delete_on_idle                     = "P10675199DT2H48M5.4775807S"
   enable_express                          = false
 }
 
