@@ -18,7 +18,7 @@ resource "azurerm_servicebus_topic" "servicebus_topic" {
   enable_express                          = false
 }
 
-resource "azurerm_servicebus_topic_authorization_rule" "SendAndListenSharedAccessKey" {
+resource "azurerm_servicebus_topic_authorization_rule" "send_listen_auth_rule" {
   name                = local.auth_rule_name
   namespace_name      = var.namespace_name
   topic_name          = azurerm_servicebus_topic.servicebus_topic.name
