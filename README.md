@@ -1,6 +1,6 @@
 # terraform-module-servicebus-topic
 
-A Terraform module for creating Azure Service Bus topics
+A Terraform module for creating Azure Service Bus topic
 Refer to the following link for a detailed explanation of the Azure Service Bus topic.
 
 [Azure Service Bus Topic](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions) <br />
