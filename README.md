@@ -14,7 +14,7 @@ module "servicebus-topic" {
   source                = "git@github.com:hmcts/terraform-module-servicebus-topic?ref=servicebus_topic_tf"
   name                  = "your-topic"
   namespace_name        = module.servicebus-namespace.name
-  resource_group_name   = local.resource_group_name
+  resource_group_name   = azurerm_resource_group.rg.name
 }
 ```
 
