@@ -11,7 +11,7 @@ The following example shows how to use the module to create an Azure Service Bus
 
 ```terraform
 module "servicebus-topic" {
-  source                = "git@github.com:hmcts/terraform-module-servicebus-topic?ref=servicebus_topic_tf"
+  source                = "git@github.com:hmcts/terraform-module-servicebus-topic?ref=master"
   name                  = "your-topic"
   namespace_name        = module.servicebus-namespace.name
   resource_group_name   = azurerm_resource_group.rg.name
