@@ -21,7 +21,6 @@ resource "azurerm_servicebus_topic_authorization_rule" "send_listen_auth_rule" {
   name                = local.auth_rule_name
   namespace_name      = var.namespace_name
   topic_id            = azurerm_servicebus_topic.servicebus_topic.id
-  resource_group_name = var.resource_group_name
 
   listen = true
   send   = true
