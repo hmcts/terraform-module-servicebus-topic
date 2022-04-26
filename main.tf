@@ -13,8 +13,8 @@ data "azurerm_servicebus_namespace" "this" {
 
 
 resource "azurerm_servicebus_topic" "servicebus_topic" {
-  name                = var.name
-  namespace_id        = data.azurerm_servicebus_namespace.this.id
+  name         = var.name
+  namespace_id = data.azurerm_servicebus_namespace.this.id
 
   enable_partitioning                     = var.enable_partitioning
   default_message_ttl                     = var.default_message_ttl
