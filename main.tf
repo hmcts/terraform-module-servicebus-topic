@@ -28,8 +28,8 @@ resource "azurerm_servicebus_topic" "servicebus_topic" {
 }
 
 resource "azurerm_servicebus_topic_authorization_rule" "send_listen_auth_rule" {
-  name                = local.auth_rule_name
-  topic_id            = azurerm_servicebus_topic.servicebus_topic.id
+  name     = local.auth_rule_name
+  topic_id = azurerm_servicebus_topic.servicebus_topic.id
 
   listen = true
   send   = true
