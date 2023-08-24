@@ -25,6 +25,7 @@ resource "azurerm_servicebus_topic" "servicebus_topic" {
   support_ordering                        = var.support_ordering
   auto_delete_on_idle                     = var.auto_delete_on_idle
   enable_express                          = var.enable_express
+  max_message_size_in_kilobytes           = var.max_message_size_in_kilobytes
 }
 
 resource "azurerm_servicebus_topic_authorization_rule" "send_listen_auth_rule" {
