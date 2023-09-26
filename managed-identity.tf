@@ -17,37 +17,9 @@ resource "azurerm_role_assignment" "implicit_mi_role_assignment_sender" {
   count                = var.create_managed_identity ? 1 : 0
 }
 
-resource "azurerm_role_assignment" "implicit_mi_role_assignment_receiver" {
-  principal_id         = azurerm_user_assigned_identity.managed_identity[0].principal_id
-  role_definition_name = "Azure Service Bus Data Receiver"
-  scope                = azurerm_servicebus_topic.servicebus_topic.id
-  count                = var.create_managed_identity ? 1 : 0
-}
-
-resource "azurerm_role_assignment" "implicit_mi_role_assignment_owner" {
-  principal_id         = azurerm_user_assigned_identity.managed_identity[0].principal_id
-  role_definition_name = "Azure Service Bus Data Owner"
-  scope                = azurerm_servicebus_topic.servicebus_topic.id
-  count                = var.create_managed_identity ? 1 : 0
-}
-
 resource "azurerm_role_assignment" "mi_role_assignment_sender" {
   principal_id         = each.value
   role_definition_name = "Azure Service Bus Data Sender"
-  scope                = azurerm_servicebus_topic.servicebus_topic.id
-  for_each             = local.managed_identity_list
-}
-
-resource "azurerm_role_assignment" "mi_role_assignment_receiver" {
-  principal_id         = each.value
-  role_definition_name = "Azure Service Bus Data Receiver"
-  scope                = azurerm_servicebus_topic.servicebus_topic.id
-  for_each             = local.managed_identity_list
-}
-
-resource "azurerm_role_assignment" "mi_role_assignment_owner" {
-  principal_id         = each.value
-  role_definition_name = "Azure Service Bus Data Owner"
   scope                = azurerm_servicebus_topic.servicebus_topic.id
   for_each             = local.managed_identity_list
 }
