@@ -49,10 +49,8 @@ module "servicebus-topic" {
   namespace_name             = module.servicebus-namespace.name
   resource_group_name        = azurerm_resource_group.rg.name
 
-  # these variables are required
+  # this variable is required
   managed_identity_object_id = "your-mi-object-id"
-  product                    = var.product
-  env                        = var.env
 }
 ```
 
