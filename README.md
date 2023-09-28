@@ -37,3 +37,19 @@ The following variables are provided by the module for use in other modules
 - `secondary_send_and_listen_connection_string` the Secondary Connection String for the ServiceBus Topic authorization Rule.
 - `primary_send_and_listen_shared_access_key` the Primary Key for the ServiceBus Topic authorization Rule.
 - `secondary_send_and_listen_shared_access_key` the Secondary Key for the ServiceBus Topic authorization Rule.
+
+## Managed Identity Role Assignment
+
+The following example shows how to give read access to a user assigned managed identity for the topic:
+
+```terraform
+module "servicebus-topic" {
+  source                     = "git@github.com:hmcts/terraform-module-servicebus-topic?ref=master"
+  name                       = "your-topic"
+  namespace_name             = module.servicebus-namespace.name
+  resource_group_name        = azurerm_resource_group.rg.name
+
+  # this variable is required
+  managed_identity_object_id = "your-mi-object-id"
+}
+```

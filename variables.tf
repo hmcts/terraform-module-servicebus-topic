@@ -72,3 +72,8 @@ variable "max_message_size_in_kilobytes" {
   description = "Integer value which controls the maximum size of a message allowed on the topic for Premium SKU"
   default     = null
 }
+
+variable "managed_identity_object_id" {
+  default     = null
+  description = "the object id of the managed identity - can be retrieved with az identity show --name <identity-name>-sandbox-mi -g managed-identities-<env>-rg --subscription DCD-CFTAPPS-<env> --query principalId -o tsv"
+}
