@@ -13,7 +13,7 @@ variable "resource_group_name" {
   description = "Resource group in which the Service Bus topic should exist"
 }
 
-variable "enable_partitioning" {
+variable "partitioning_enabled" {
   type        = bool
   default     = false
   description = "Enable partitioning"
@@ -43,7 +43,7 @@ variable "max_size_in_megabytes" {
   description = "Size of memory allocated"
 }
 
-variable "enable_batched_operations" {
+variable "batched_operations_enabled" {
   type        = bool
   default     = false
   description = "Controls whether server-side batched operations are enabled"
@@ -61,7 +61,7 @@ variable "auto_delete_on_idle" {
   description = "Auto delete on idle"
 }
 
-variable "enable_express" {
+variable "express_enabled" {
   type        = bool
   default     = false
   description = "Enable express"
@@ -76,4 +76,10 @@ variable "max_message_size_in_kilobytes" {
 variable "managed_identity_object_id" {
   default     = null
   description = "the object id of the managed identity - can be retrieved with az identity show --name <identity-name>-sandbox-mi -g managed-identities-<env>-rg --subscription DCD-CFTAPPS-<env> --query principalId -o tsv"
+}
+
+variable "principal_type" {
+  type        = string
+  description = "The principal type that the role will be assigned to"
+  default     = null
 }
