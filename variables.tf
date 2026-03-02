@@ -8,6 +8,18 @@ variable "namespace_name" {
   description = "Azure Service Bus namespace"
 }
 
+variable "namespace_id" {
+  type        = string
+  default     = null
+  description = "Azure Service Bus namespace resource ID. When use_namespace_id is true, used directly for topic namespace_id."
+}
+
+variable "use_namespace_id" {
+  type        = bool
+  default     = false
+  description = "When true, use namespace_id for the topic resource instead of namespace_name (required when namespace_id is passed)."
+}
+
 variable "resource_group_name" {
   type        = string
   description = "Resource group in which the Service Bus topic should exist"

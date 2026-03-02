@@ -3,6 +3,11 @@ output "name" {
   value = azurerm_servicebus_topic.servicebus_topic.name
 }
 
+# Azure resource ID of the topic
+output "topic_id" {
+  value = azurerm_servicebus_topic.servicebus_topic.id
+}
+
 # primary connection string for send and listen operations
 output "primary_send_and_listen_connection_string" {
   value = azurerm_servicebus_topic_authorization_rule.send_listen_auth_rule.primary_connection_string
